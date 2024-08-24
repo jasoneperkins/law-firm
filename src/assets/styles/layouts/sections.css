@@ -1,0 +1,8 @@
+section {
+  @apply grid col-span-full py-20 border-b border-b-gray-900;
+
+  &:not(.full-width)>*,
+  :not(.breakout)>* {
+    grid-column: content;
+  }
+}

@@ -1,0 +1,48 @@
+---
+import {ViewTransitions} from "astro:transitions"
+import {AstroFont} from "astro-font"
+
+const {title} = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <ViewTransitions />
+    <AstroFont
+      config={[
+        {
+          src: [],
+          name: "Noto Sans",
+          // Google Fonts URL
+          googleFontsURL:
+            "https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap",
+          preload: true,
+          display: "swap",
+          selector: "body",
+          fallback: "sans-serif",
+        },
+        {
+          src: [],
+          name: "Noto Serif",
+          // Google Fonts URL
+          googleFontsURL:
+            "https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap",
+          preload: true,
+          display: "swap",
+          selector: "h1, h2, h3, h4",
+          fallback: "sans-serif",
+        },
+      ]}
+    />
+    <link rel="stylesheet" href="/src/assets/styles/global.css" />
+  </head>
+  <body>
+    <main><slot /></main>
+  </body>
+</html>
